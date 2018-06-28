@@ -18,16 +18,8 @@ public class PhoneBookListController {
 
     @GetMapping("/list")
     public String getPhoneBookList(Map<String, Object> modelData) {
-
-        List<PhoneEntryModel> listOfEntries = new ArrayList<>();
-        listOfEntries.addAll(phoneEntryService.getAllEntries());
-
-        for (int i = 0; i <listOfEntries.size() ; i++) {
-            String name = listOfEntries.get(i).getCompanyName();
-            modelData.put("companyName", name);
-            int phone = listOfEntries.get(i).getCompanyPhone();
-            modelData.put("companyPhone", phone);
-        }
+        List<PhoneEntryModel> listOfEntries = new ArrayList<>(phoneEntryService.getAllEntries());
+        modelData.put("entries", listOfEntries);
         return "phonebooklist";
     }
 
