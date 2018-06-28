@@ -20,7 +20,6 @@ public class PhonebookApplication {
         return new PhoneEntryService();
     }
 
-
     public static void main(String[] args) {
         SpringApplication.run(PhonebookApplication.class, args);
     }
