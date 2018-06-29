@@ -12,9 +12,7 @@ public class PhoneBookController {
 
 
     @GetMapping("/")
-    public String getMain(Map<String, Object> model,
-                          @RequestHeader(value = "User-Agent") String userAgent) {
-
+    public String getMain(Map<String, Object> model, @RequestHeader(value = "User-Agent") String userAgent) {
         String userName = System.getProperty("user.name");
         model.put("userName", userName);
         model.put("userAgent", userAgent);
